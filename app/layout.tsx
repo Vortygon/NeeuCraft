@@ -6,9 +6,6 @@ import Header from "./components/header";
 export const metadata: Metadata = {
   title: "NeeuCraft",
   description: "Ванильный Minecraft сервер",
-  openGraph: {
-    images: '/Ad_Banner.png',
-  },
 };
 
 export const viewport: Viewport = {
