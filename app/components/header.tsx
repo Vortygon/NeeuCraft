@@ -1,27 +1,29 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const buttons = [
-  {name:'Test', link:''},
-  {name:'Test', link:''},
+  {name:'Главная', link:'/'},
 ]
 
 const Icon = () => {
   return (
-    <div className="w-fit">
-      <Image src={"/NeeuCraftX32.png"} alt={""} fill className="object-contain w-fit"/>
-    </div>
+    <Link href={"/"} className="relative w-fit aspect-square h-full">
+        <Image src={"/NeeuCraftX32.png"} alt={""} fill className="object-contain w-fit p-1"/>
+    </Link>
   )
 }
 
 export default function Header() {
   return(
-    <div className="sticky flex h-16 backdrop-blur-2xl top-0 border-y-1 border-[#ffffff25] items-center z-10">
+    <div className="sticky flex h-16 backdrop-blur-2xl top-0 border-b-1 border-[#ffffff25] items-center z-10 gap-5 px-4 shadow-xl">
 
-      {/* <Icon/> */}
+      <Icon/>
 
-      <div className="flex text-neutral-300 text-xl">
+      <div className="flex text-neutral-400 text-xl h-full">
         {buttons.map((button,i) => 
-          <a href={button.link} key={button.name+i}>{button.name}</a>
+          <Link href={button.link} key={button.name+i} className="flex px-7 hover:text-neutral-300 hover:bg-[#ffffff15] duration-150 h-full items-center">
+            {button.name}
+          </Link>
         )}
       </div>
 

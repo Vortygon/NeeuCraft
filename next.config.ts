@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
+import createMDX from '@next/mdx';
+import remarkGfm from 'remark-gfm';
+import remarkRehype from "remark-rehype";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  experimental: {
+    mdxRs: true,
+  },
+
   async redirects() {
     return [
       {
@@ -18,4 +26,11 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  extension: /\.(md|mdx)$/,
+  options: {
+    remarkPlugins: [remarkGfm, remarkRehype],
+  },
+})
+
+export default withMDX(nextConfig);
