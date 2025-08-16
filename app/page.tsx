@@ -105,7 +105,7 @@ export default function Home() {
           <p className="text-2xl font-black text-shadow-lg text-shadow-gray-950 bg-opacity-20 z-1">Добро пожаловать в первый сезон NeeuCraft</p>
         </Link>   
 
-        <Link href={"https://discord.gg/meeubase"} className="relative md:flex-1/4 w-full h-60 overflow-hidden">
+        <Link href={"discord:///invite/meeubase"} className="relative md:flex-1/4 w-full h-60 overflow-hidden">
           <img src="https://cdn.discordapp.com/icons/1161185029154676736/f707ae98a5c47717560d9056d44df6c8.webp?size=1024" alt="" className="absolute object-cover h-full w-full pointer-events-none opacity-75"/>
           <p className="text-2xl font-black text-shadow-lg text-shadow-gray-800 z-1">Discord сервер Meeu Base</p>
         </Link>
