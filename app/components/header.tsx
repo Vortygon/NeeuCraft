@@ -3,6 +3,7 @@ import Link from "next/link";
 
 const buttons = [
   {name:'Главная', link:'/'},
+  {name:'FAQ', link:'/posts/faq'},
 ]
 
 const Icon = () => {
