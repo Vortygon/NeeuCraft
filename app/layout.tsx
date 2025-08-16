@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "tailwindcss"
 import Header from "./components/header";
@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "NeeuCraft",
   description: "Ванильный Minecraft сервер",
 };
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
+}
 
 export default function RootLayout({
   children,
