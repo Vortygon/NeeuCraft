@@ -2,12 +2,16 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "tailwindcss"
 import Header from "./components/header";
+import og_image from "./opengraph-image.png"
 
 export const metadata: Metadata = {
   title: "NeeuCraft",
   description: "Ванильный Minecraft сервер",
-  metadataBase: new URL("https://www.neeucraft.ru/")
-};
+  metadataBase: new URL("https://www.neeucraft.ru/"),
+  openGraph: {
+    url: og_image.src,
+  },
+}
 
 export default function RootLayout({
   children,
