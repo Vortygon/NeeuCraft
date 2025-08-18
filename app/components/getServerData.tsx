@@ -5,7 +5,7 @@ const api_list = [
 
 export default async function fetchServerActivity(api: number) {
   try {
-    const response = await fetch(api_list[api])
+    const response = await fetch(api_list[api], {cache: 'force-cache', next: {revalidate: 10} })
     if (!response.ok) {
       throw new Error('Response error')
     }
