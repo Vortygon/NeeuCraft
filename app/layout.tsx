@@ -9,7 +9,13 @@ export const metadata: Metadata = {
   description: "Ванильный Minecraft сервер",
   metadataBase: new URL("https://www.neeucraft.ru/"),
   openGraph: {
-    url: og_image.src,
+    url: "https://www.neeucraft.ru/",
+    images: '/NeeuCraftBB_Banner_Cropped.png',
+    title: "NeeuCraft",
+    description: "Ванильный Minecraft сервер",
+    siteName: 'NeeuCraft',
+    locale: 'ru_RU',
+    type: 'website'
   },
 }
 
