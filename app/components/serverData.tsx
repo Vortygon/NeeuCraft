@@ -4,7 +4,7 @@ interface ServerInfoProps {
   className?: string,
 }
 
-let data = await fetchServerActivity()
+const data = await fetchServerActivity()
 
 function Status() {
   return (
