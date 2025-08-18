@@ -1,6 +1,11 @@
-export default async function fetchServerActivity() {
+const api_list = [
+  'https://api.mcsrvstat.us/3/neeucraft.ru',
+  'https://mcapi.us/server/status?ip=neeucraft.ru'
+]
+
+export default async function fetchServerActivity(api: number) {
   try {
-    const response = await fetch('https://api.mcsrvstat.us/3/neeucraft.ru')
+    const response = await fetch(api_list[api])
     if (!response.ok) {
       throw new Error('Response error')
     }

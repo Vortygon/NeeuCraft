@@ -4,7 +4,7 @@ interface ServerInfoProps {
   className?: string,
 }
 
-const data = await fetchServerActivity()
+const data = await fetchServerActivity(1)
 
 function Status() {
   return (
@@ -30,7 +30,7 @@ function Online() {
     </div>
     {data.online ?
       <div className="bg-neutral-700 rounded-xl p-2 px-4 not-md:p-1 flex-1">
-        {data.players.online} / {data.players.max}
+        {data.players.online? data.players.online : data.players.now} / {data.players.max}
       </div> : <></>}
   </div>;
 }
