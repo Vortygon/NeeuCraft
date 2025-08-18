@@ -8,10 +8,6 @@ export const metadata: Metadata = {
   description: "Ванильный Minecraft сервер",
 };
 
-export const viewport: Viewport = {
-  colorScheme: "dark",
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{

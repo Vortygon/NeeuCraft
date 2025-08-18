@@ -1,5 +1,9 @@
 import fetchServerActivity from "./getServerData";
 
+interface ServerInfoProps {
+  className?: string,
+}
+
 let data = await fetchServerActivity()
 
 function Status() {
@@ -31,10 +35,10 @@ function Online() {
   </div>;
 }
 
-export default async function ServerInfo() {
+export default async function ServerInfo({className}: ServerInfoProps) {
   // console.log(data)
   return (
-    <div className="flex flex-wrap flex-3/5 *:gap-3 flex-row w-full *:items-center *:flex *:w-full *:flex-1 *:md:justify-end">
+    <div className={"flex flex-wrap flex-3/5 *:gap-3 flex-row w-full *:items-center *:flex *:w-full *:flex-1 *:md:justify-end "+className}>
       <Status/>
       <Online/>
     </div>
