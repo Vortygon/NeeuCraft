@@ -1,65 +1,21 @@
 import Image from "next/image";
 import 'tailwindcss'
 import './nerd.css'
-import { copyIP } from "./components/copyIP";
 import Link from "next/link";
+import copyText from "./components/copyText";
+import ServerInfo from "./components/serverData";
+import Divider from "./components/divider";
 
 const modpacks = [
   {name:'ZIP', link:'https://www.dropbox.com/scl/fi/f793krkghi6oo8nanzjqe/NeeuCraft.zip?rlkey=6o0rdgf8z86wp6982fokhxk8p&e=1&st=0x01tsjp&dl=1'},
   {name:'RAR', link:'https://www.dropbox.com/scl/fi/q4epyb5svcbzibfimfov5/NeeuCraft.rar?rlkey=3uws1jm0xcp87cnaatcnpcqk8&st=fhdxabk4&dl=1'},
 ]
 
-async function fetchServerActivity() {
-  try {
-    const response = await fetch('https://api.mcsrvstat.us/3/neeucraft.ru')
-    if (!response.ok) {
-      throw new Error('Response error')
-    }
-    const data = await response.json()
-    return data
-  } catch (error) {
-    return null
-  }
-  
-}
-
 function IP() {
   return (
     <div className="flex-1/5">
       IP:
-      <span className="bg-neutral-950 rounded-xl py-2 px-4 hover:bg-neutral-900 duration-150 active:bg-neutral-700" onClick={copyIP}>neeucraft.ru</span>
-    </div>
-  )
-}
-
-function Status() {
-  return (
-    <div className="flex flex-wrap flex-3/5 *:gap-3 flex-row w-full *:items-center *:flex *:w-full *:flex-1 *:md:justify-end">
-      <div>
-        <div className="flex-1">
-          Статус сервера:
-        </div>
-        <div className="bg-neutral-700 rounded-xl p-2 px-4 not-md:p-1 flex-1">
-          {
-            fetchServerActivity().then(data => data.online ? 
-              <span className="text-green-500">• онлайн</span> :
-              <span className="text-red-500">• оффлайн</span>)
-          }
-        </div>
-      </div>
-
-      <div>
-        <div className="flex-1">
-          Игроков онлайн:
-        </div>
-        {
-          fetchServerActivity().then(data => data.online ? 
-            <div className="bg-neutral-700 rounded-xl p-2 px-4 not-md:p-1 flex-1">
-              {data.players.online} / {data.players.max}
-            </div>:<></>)
-        }
-      </div>
-      
+      <span className="bg-neutral-950 rounded-xl py-2 px-4 hover:bg-neutral-900 duration-150 active:bg-neutral-700" onClick={copyText}>neeucraft.ru</span>
     </div>
   )
 }
@@ -78,12 +34,6 @@ function DownloadPack() {
   )
 }
 
-function Divider() {
-  return (
-    <div className="border-[#ffffff25] border-t-0 border-1"></div>
-  )
-}
-
 function InteractiveMap() {
   return (
     <iframe src="https://neeucraft.dynmap.xyz" className="!p-0 w-full h-150" />
@@ -91,7 +41,6 @@ function InteractiveMap() {
 }
 
 export default function Home() {
-  fetchServerActivity()
   return (
     <div className="flex flex-col h-screen w-screen p-0 m-0 text-xl">
       <Image src={"/NeeuCraftBB_Banner.png"} alt={""} height={629} width={3853} className="h-1/3 w-auto object-cover shadow-xl pointer-events-none "/>
@@ -112,7 +61,7 @@ export default function Home() {
         </Link>
 
         <IP />
-        <Status/>
+        <ServerInfo />
         <DownloadPack/>
         {/* <InteractiveMap/> */}
 

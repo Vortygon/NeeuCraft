@@ -1,0 +1,9 @@
+recipes:
+  structure_void:
+    name: "Структурная пустота"
+    image: "structure_void"
+  invisible_light:
+    name: "Невидимый свет"
+    image: "invisible_light"
+
+

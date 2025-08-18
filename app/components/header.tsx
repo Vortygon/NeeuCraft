@@ -1,10 +1,11 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 
 const buttons = [
   {name:'Главная', link:'/'},
+  {name:'Рецепты', link:'/recipes'},
   {name:'FAQ', link:'/posts/faq'},
-  // {name:'Рецепты', link:'/recipes'},
 ]
 
 const Icon = () => {
