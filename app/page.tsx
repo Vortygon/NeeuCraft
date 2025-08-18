@@ -43,16 +43,18 @@ function InteractiveMap() {
 export default function Home() {
   return (
     <div className="flex flex-col h-screen w-screen p-0 m-0 text-xl">
-      <Image src={"/NeeuCraftBB_Banner.png"} alt={""} height={629} width={3853} className="h-1/3 w-auto object-cover shadow-xl pointer-events-none "/>
+      <Image src={"/NeeuCraftBB_Banner.png"} alt={""} height={629} width={3853} className="h-1/3 w-auto object-cover shadow-xl pointer-events-none" />
 
       <Divider/>
 
+      Новости
+      
       <div className="flex flex-wrap px-20 py-7 w-full h-fit gap-5 *:not-md:w-full *:min-h-30 not-md:px-5 not-md:py-5 *:not-md:p-2 *:not-md:min-h-20 *:text-center *:hover:-translate-y-1.5 *:duration-250
       *:flex *:bg-neutral-800 *:rounded-2xl *:p-5 *:px-7 *:gap-3 *:items-center *:justify-center *:shadow-xl *:w-full
       ">
-        <Link href={""} className="w-full md:flex-2/4 relative h-60 overflow-hidden ">
+        <Link href={"/posts/faq"} className="w-full md:flex-2/4 relative h-60 overflow-hidden ">
           <Image src={"/Ad_Banner.png"} alt={""} fill className="pointer-events-none object-cover opacity-75"/>
-          <p className="text-2xl font-black text-shadow-lg text-shadow-gray-950 bg-opacity-20 z-1">Добро пожаловать в первый сезон NeeuCraft</p>
+          <p className="text-2xl font-black text-shadow-lg text-shadow-gray-950 bg-opacity-20 z-1">Добро пожаловать на первый сезон NeeuCraft</p>
         </Link>   
 
         <Link href={"https://discord.gg/meeubase"} className="relative md:flex-1/4 w-full h-60 overflow-hidden">
@@ -62,7 +64,7 @@ export default function Home() {
 
         <IP />
         <ServerInfo />
-        <DownloadPack/>
+        <DownloadPack />
         {/* <InteractiveMap/> */}
 
       </div>
