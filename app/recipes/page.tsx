@@ -20,7 +20,7 @@ export default async function Recipes() {
         <div key={recipe.name} className="relative flex bg-neutral-800 rounded-2xl shadow-xl overflow-hidden">
           <p className="flex flex-1/2 items-center p-10 justify-center font-bold">{recipe.name}</p>
           <div className="flex relative md:max-h-60 md:min-h-45 min-h-30 flex-1/2 w-fit object-cover">
-            <Image src={"/recipes/"+recipe.image+".png"} alt={""} fill className="object-contain object-right relative" />
+            <Image src={"/recipes/"+recipe.image+".png"} alt={""} fill className="object-contain object-right relative" quality={100} />
           </div>
         </div>
       )}
