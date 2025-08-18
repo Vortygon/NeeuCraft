@@ -4,7 +4,7 @@ interface ServerInfoProps {
   className?: string,
 }
 
-const data = await fetchServerActivity(1)
+let data = await fetchServerActivity(1)
 
 function Status() {
   return (
@@ -37,6 +37,7 @@ function Online() {
 
 export default async function ServerInfo({className}: ServerInfoProps) {
   // console.log(data)
+  data = await fetchServerActivity(1)
   return (
     <div className={"flex flex-wrap flex-3/5 *:gap-3 flex-row w-full *:items-center *:flex *:w-full *:flex-1 *:md:justify-end "+className}>
       <Status/>
