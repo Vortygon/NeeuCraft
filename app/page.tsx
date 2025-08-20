@@ -3,7 +3,8 @@ import 'tailwindcss'
 import './nerd.css'
 import Link from "next/link";
 import copyText from "./components/copyText";
-import ServerInfo from "./components/serverData";
+import CopyToClipboardButton from "./components/copyText";
+import ServerInfo from "./components/serverStatus";
 import Divider from "./components/divider";
 
 const modpacks = [
@@ -15,7 +16,8 @@ function IP(props: { className?: string; }) {
   return (
     <div className={"flex-1/5 "+props.className}>
       IP:
-      <span className="bg-neutral-950 rounded-xl py-2 px-4 hover:bg-neutral-900 duration-150 active:bg-neutral-700" onClick={copyText}>neeucraft.ru</span>
+      {/* <span className="bg-neutral-950 rounded-xl py-2 px-4 hover:bg-neutral-900 duration-150 active:bg-neutral-700" onClick={copyText}>neeucraft.ru</span> */}
+      <CopyToClipboardButton textToCopy="neeucraft.ru" className="bg-neutral-950 rounded-xl py-2 px-4 hover:bg-neutral-900 duration-150 active:bg-neutral-700">neeucraft.ru</CopyToClipboardButton>
     </div>
   )
 }
@@ -74,7 +76,7 @@ export default function Home() {
         </Link>
 
         <IP className="panel" />
-        <ServerInfo className="panel" />
+        <ServerInfo className="panel" online status />
         <DownloadPack className="panel" />
         {/* <InteractiveMap/> */}
 

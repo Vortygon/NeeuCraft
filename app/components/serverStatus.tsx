@@ -2,6 +2,9 @@ import fetchServerActivity from "./getServerData";
 
 interface ServerInfoProps {
   className?: string,
+  all?: boolean,
+  status?: boolean,
+  online?: boolean,
 }
 
 let data = await fetchServerActivity(0)
@@ -35,13 +38,13 @@ function Online() {
   </div>;
 }
 
-export default async function ServerInfo({className}: ServerInfoProps) {
+export default async function ServerInfo({className, all, status, online}: ServerInfoProps) {
   // console.log(data)
   data = await fetchServerActivity(0)
   return (
     <div className={"flex flex-wrap flex-3/5 *:gap-3 flex-row w-full *:items-center *:flex *:w-full *:flex-1 *:md:justify-end "+className}>
-      <Status/>
-      <Online/>
+      {status||all ? <Status/> : <></>}
+      {online||all ? <Online/>: <></>}
     </div>
   )
 }

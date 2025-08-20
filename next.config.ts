@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import createMDX from '@next/mdx';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from "remark-rehype";
+import { compileMDX } from "next-mdx-remote/rsc";
 
 const nextConfig: NextConfig = {
   /* config options here */
