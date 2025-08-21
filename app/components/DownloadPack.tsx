@@ -4,8 +4,6 @@ export default function DownloadPack(props: { className?: string; }) {
   const modpacks = [
     { name: 'ZIP', link: 'https://www.dropbox.com/scl/fi/f793krkghi6oo8nanzjqe/NeeuCraft.zip?rlkey=6o0rdgf8z86wp6982fokhxk8p&e=1&st=0x01tsjp&dl=1' },
     { name: 'RAR', link: 'https://www.dropbox.com/scl/fi/q4epyb5svcbzibfimfov5/NeeuCraft.rar?rlkey=3uws1jm0xcp87cnaatcnpcqk8&st=fhdxabk4&dl=1' },
-    { name: 'ZIP (GitHub)', link: '/Сборка NeeuCraft.zip' },
-    { name: 'RAR (GitHub)', link: '/Сборка NeeuCraft.rar' },
   ];
 
   return (
