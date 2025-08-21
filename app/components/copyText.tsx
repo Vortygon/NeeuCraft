@@ -19,8 +19,8 @@ const CopyToClipboardButton = ({ textToCopy, className, children }:{ textToCopy:
   };
 
   return (
-    <button onClick={handleCopy} className={className}>
-      {isCopied ? 'Copied!' : children}
+    <button onClick={handleCopy} className={`${isCopied ? 'text-violet-300' : ''} ${className} justify-around min-w-40`}>
+      {isCopied ? 'Скопировано' : children}
     </button>
   );
 };

@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "tailwindcss"
 import Header from "./components/header";
-import og_image from "./opengraph-image.png"
 
 export const metadata: Metadata = {
   title: "NeeuCraft",
@@ -25,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body className={`antialiased bg-neutral-900 text-[#ededed] p-0 m-0`}>
         <Header/>
         {children}
