@@ -30,7 +30,7 @@ function BannerButton ({ href, img, className, children, externalImg }:{ href:st
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-screen w-screen p-0 m-0 text-xl">
+    <div className="flex flex-col h-screen w-screen p-0 m-0 text-xl not-md:text-lg">
       <Image src={"/NeeuCraftBB_Banner.png"} alt={""} height={629} width={3853} className="h-1/3 w-auto object-cover shadow-xl pointer-events-none" quality={100} />
 
       <Divider />
